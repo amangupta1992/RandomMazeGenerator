@@ -1,0 +1,60 @@
+# Project: simple drawing
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = "filled\ rectangle.o" "RANDOM\ CREATION.o" "space\ rec.o" basic_design.o coord_cal.o lining.o out_boundary.o play.o solve.o testbrick.o startmenu.o $(RES)
+LINKOBJ  = "filled rectangle.o" "RANDOM CREATION.o" "space rec.o" basic_design.o coord_cal.o lining.o out_boundary.o play.o solve.o testbrick.o startmenu.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = "simple drawing.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "simple drawing.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "simple drawing.exe" $(LIBS)
+
+"filled\ rectangle.o": filled\ rectangle.cpp
+	$(CPP) -c "filled rectangle.cpp" -o "filled rectangle.o" $(CXXFLAGS)
+
+"RANDOM\ CREATION.o": RANDOM\ CREATION.cpp
+	$(CPP) -c "RANDOM CREATION.cpp" -o "RANDOM CREATION.o" $(CXXFLAGS)
+
+"space\ rec.o": space\ rec.cpp
+	$(CPP) -c "space rec.cpp" -o "space rec.o" $(CXXFLAGS)
+
+basic_design.o: basic_design.cpp
+	$(CPP) -c basic_design.cpp -o basic_design.o $(CXXFLAGS)
+
+coord_cal.o: coord_cal.cpp
+	$(CPP) -c coord_cal.cpp -o coord_cal.o $(CXXFLAGS)
+
+lining.o: lining.cpp
+	$(CPP) -c lining.cpp -o lining.o $(CXXFLAGS)
+
+out_boundary.o: out_boundary.cpp
+	$(CPP) -c out_boundary.cpp -o out_boundary.o $(CXXFLAGS)
+
+play.o: play.cpp
+	$(CPP) -c play.cpp -o play.o $(CXXFLAGS)
+
+solve.o: solve.cpp
+	$(CPP) -c solve.cpp -o solve.o $(CXXFLAGS)
+
+testbrick.o: testbrick.cpp
+	$(CPP) -c testbrick.cpp -o testbrick.o $(CXXFLAGS)
+
+startmenu.o: startmenu.cpp
+	$(CPP) -c startmenu.cpp -o startmenu.o $(CXXFLAGS)
